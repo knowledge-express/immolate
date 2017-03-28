@@ -1,0 +1,22 @@
+{
+  "name": "immolate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "immolate": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"It's blazing! 🔥\" | ./index.js"
+  },
+  "authors": [
+    "Joost Verdoorn <jpverdoorn@gmail.com>",
+    "Steffan Sluis <steffansluis@gmail.com>"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "cli-color": "^1.2.0",
+    "map-stream": "0.0.7",
+    "minimist": "^1.2.0"
+  }
+}
