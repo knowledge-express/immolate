@@ -3,9 +3,9 @@
 const clc = require('cli-color');
 const map = require('map-stream');
 const minimist = require('minimist');
-const fireColors = [196, 202, 208, 214, 220, 226];
-const iceColors = [27, 33, 39, 75, 117, 159, 195, 231];
-const matrixColors = [22, 28, 34, 40, 46, 82, 119, 157];
+const fireColors = [196, 202, 208, 214, 220, 226, 220, 214, 208, 202];
+const iceColors = [27, 33, 39, 75, 117, 159, 195, 231, 195, 159, 117, 75, 39, 33];
+const matrixColors = [22, 28, 34, 40, 46, 82, 119, 157, 119, 82, 46, 40, 34, 28];
 
 const firestarters = fireColors.map(clc.xterm);
 const extinguishers = iceColors.map(clc.xterm);
