@@ -20,19 +20,25 @@ let i = 0;
 
 const fireUp = argv['fire'] || argv['f'];
 const coolDown = argv['ice'] || argv['i'];
-const redpill = argv['matrix'] || argv['m'];
+const redPill = argv['matrix'] || argv['m'];
 
-const painters = !(fireUp || coolDown || redpill) ? firestarters : [
+const painters = !(fireUp || coolDown || redPill) ? firestarters : [
   ...(coolDown ? extinguishers : []),
   ...(fireUp ? firestarters : []),
-  ...(redpill ? matrix : [])
+  ...(redPill ? matrix : [])
 ];
 
-const line = string => {
-  const x = Math.round(a + b + b * Math.sin(i++ * q));
-  // const x = (a + (i++ % b));
-  const regex = new RegExp(`(.|[\r\n]){1,${x}}`, 'g');
-  return string.toString().match(regex).map((substring, j) => painters[j % painters.length](substring)).join('') + "\r";
+const line = buffer => {
+  const string = buffer.toString();
+  const x = Math.round(a + b + b * Math.sin(i++ * q) + 3 * Math.random());
+  const chunks = [];
+  for (let i = 0; i * x < buffer.length; i++) {
+    const painter = painters[i % painters.length];
+    const chunk = painter(string.slice(i * x, (i + 1) * x));
+    chunks.push(chunk);
+  }
+
+  return chunks.join('');
 }
 
 
